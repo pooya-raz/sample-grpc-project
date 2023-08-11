@@ -1,0 +1,19 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.example.grpc;
+
+message CreateBatchRequest {
+  string batchId = 1;
+  string sku = 2;
+  string supplierId = 3;
+}
+
+message CreateBatchResponse {
+  string batchId = 1;
+  string sku = 2;
+  string supplierId = 3;
+}
+
+service BatchService {
+  rpc create(CreateBatchRequest) returns (CreateBatchResponse);
+}
